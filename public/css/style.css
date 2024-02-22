@@ -8,6 +8,7 @@ body{
 
 .container{
     flex: 1;
+    min-height: 80vh;
 }
 
 /* Navbar */
@@ -183,6 +184,7 @@ body{
     width: 110vh;
     border-radius: 1rem;
     border: 1px solid rgba(0, 128, 0, 0.428);
+    margin: 20px auto;
 }
 
 /*listing Button*/
@@ -463,6 +465,10 @@ body{
         height: auto;
     }
 
+    .show-container{
+      padding: 10px 20px;
+    }
+
     #listing_image img {
         height: 100%;
         width: 100%;
@@ -471,6 +477,7 @@ body{
     #map{
         height: 366px !important;
         width: auto !important;
+        margin: 10px;
     }
 
     .tittle h3 {

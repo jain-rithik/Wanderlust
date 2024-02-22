@@ -4,7 +4,7 @@
     const listing = <%- JSON.stringify(listing) %>;
 
 </script>
-<div class="row mt-3">
+<div class="row mt-3 show-container">
     <div class="col-sm-8 offset-sm-2 tittle">
         <h3>
             <%= listing.title %>
@@ -103,7 +103,9 @@
                                 <%= review.comment %>
                             </p>
                         </div>
-                        <form method="POST"
+
+                        <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+                            <form method="POST"
                             action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
                             class="p-2 my-3 mb-3">
                             <button class="review-btn">
@@ -112,6 +114,8 @@
                               </svg>
                               </button>
                         </form>
+                        <% } %>
+                        
                     </div>
                     <% } %>
             </div>
