@@ -10,6 +10,10 @@
         if (!form.checkValidity()) {
           event.preventDefault()
           event.stopPropagation()
+        } else {
+          document.querySelector(".loader").style.display = "inline";
+          document.querySelector(".pageblur").style.opacity = "0.5"
+          event.submitter.disabled = true;
         }
   
         form.classList.add('was-validated')

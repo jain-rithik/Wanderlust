@@ -1,130 +1,280 @@
 <% layout("/layouts/boilerplate") %>
+<style></style>
 
-    <style>
-        #filters {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+<div id="filters">
+  <div class="scrollable-tabs-container">
+    <div class="left-arrow">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5"
+        />
+      </svg>
+    </div>
+    <div class="filter-container">
+      <a class="filter active" href="/listings">
+        <div><i class="fa-solid fa-house"></i></div>
+        <p>ALL</p>
+      </a>
+      <a class="filter" href="/listings/filter/Trending">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </a>
+      <a class="filter" href="/listings/filter/Rooms">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </a>
+      <a class="filter" href="/listings/filter/Iconic cities">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic cities</p>
+      </a>
+      <a class="filter" href="/listings/filter/Mountains">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </a>
+      <a class="filter" href="/listings/filter/Castles">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castles</p>
+      </a>
+      <a class="filter" href="/listings/filter/Amazing pools">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Amazing pools</p>
+      </a>
+      <a class="filter" href="/listings/filter/Camping">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+      </a>
+      <a class="filter" href="/listings/filter/Farms">
+        <div><i class="fa-solid fa-cow"></i></div>
+        <p>Farms</p>
+      </a>
+      <a class="filter" href="/listings/filter/Arctic">
+        <div><i class="fa-regular fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </a>
+      <a class="filter" href="/listings/filter/Domes">
+        <div><i class="fa-solid fa-igloo"></i></div>
+        <p>Domes</p>
+      </a>
+      <a class="filter" href="/listings/filter/Boats">
+        <div><i class="fa-solid fa-ship"></i></div>
+        <p>Boats</p>
+      </a>
+    </div>
+    <div class="right-arrow active">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5"
+        />
+      </svg>
+    </div>
+  </div>
 
-        #filters a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .filter {
-            text-align: center;
-            margin-right: 2rem;
-            margin-top: 2rem;
-            opacity: 0.7;
-        }
-
-        .filter:hover {
-            opacity: 1;
-            cursor: pointer;
-        }
-
-        .filter p {
-            font-size: 0.8rem;
-        }
-
-        .tax-info {
-            display: none;
-        }
-
-        .tax-toggle {
-            border: 1px solid black;
-            border-radius: 1rem;
-            height: 3.25rem;
-            padding: 1rem;
-            margin-left: 2rem;
-            display: flex;
-            align-items: center;
-        }
-    </style>
-
-    <div id="filters">
-        <a class="filter" href="/listings/filter?q=Trending">
-            <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Rooms">
-            <div><i class="fa-solid fa-bed"></i></div>
-            <p>Rooms</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Iconic cities">
-            <div><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Iconic cities</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Mountains">
-            <div><i class="fa-solid fa-mountain"></i></div>
-            <p>Mountains</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Castles">
-            <div><i class="fa-brands fa-fort-awesome"></i></div>
-            <p>Castles</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Amazing pools">
-            <div><i class="fa-solid fa-person-swimming"></i></div>
-            <p>Amazing pools</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Camping">
-            <div><i class="fa-solid fa-campground"></i></div>
-            <p>Camping</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Farms">
-            <div><i class="fa-solid fa-cow"></i></div>
-            <p>Farms</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Arctic">
-            <div><i class="fa-regular fa-snowflake"></i></div>
-            <p>Arctic</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Domes">
-            <div><i class="fa-solid fa-igloo"></i></div>
-            <p>Domes</p>
-        </a>
-        <a class="filter" href="/listings/filter?q=Boats">
-            <div><i class="fa-solid fa-ship"></i></div>
-            <p>Boats</p>
-        </a>
-
-        <div class="tax-toggle">
-            <div class="form-check-reverse form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
-              </div>
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckDefault"
+      />
+      <label class="form-check-label" for="flexSwitchCheckDefault"
+        >Display total after taxes</label
+      >
+    </div>
+  </div>
+</div>
+<div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3  mt-3">
+  <% for(listing of allListings) { %>
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+      <div class="card listing-card">
+        <img
+          src="<%= listing.image.url %>"
+          class="card-img-top"
+          alt="listing"
+          style="height: 20rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %> </b><br />
+            <span class="price-info" data-base-price="<%= listing.price %>">
+              &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
+            </span>
+            <!-- <i class="tax-info"> &nbsp; &nbsp;+18% GST</i> -->
+          </p>
         </div>
-    </div>
-    <div class="row row-cols-lg-3 rows-cols-md-2 row-cols-sm-1 mt-3">
-        <% for(listing of allListings) { %>
-            <a href="/listings/<%= listing._id %>" class="listing-link">
-                <div class="card listing-card" >
-                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing" style="height: 20rem">
-                    <div class="card-img-overlay"></div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <b><%= listing.title %> </b><br>
-                            &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
-                            <i class="tax-info"> &nbsp; &nbsp;+18% GST</i>
-                        </p>
-                    </div>
-                </div>
-            </a>
-            
-        <% } %>
-    </div>
+      </div>
+    </a>
+  <% } %>
+</div>
 
-    <script>
-        let taxSwitch = document.getElementById("flexSwitchCheckDefault");
-        taxSwitch.addEventListener("click", () => {
-            let taxInfo = document.getElementsByClassName("tax-info");
-            for(info of taxInfo) {
-                if(info.style.display != "inline") {
-                    info.style.display = "inline";
-                } else {
-                    info.style.display = "none";
-                }
-            }
-        })
-    </script>
+
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+
+taxSwitch.addEventListener("change", () => {
+  updatePriceDisplay(taxSwitch.checked);
+});
+
+function updatePriceDisplay(isTaxSwitchOn) {
+  let priceInfoElements = document.querySelectorAll(".price-info");
+
+  priceInfoElements.forEach((priceInfo) => {
+    const basePrice = parseFloat(priceInfo.dataset.basePrice);
+    const totalPrice = isTaxSwitchOn ? calculateTotalPrice(basePrice) : basePrice;
+
+    priceInfo.innerHTML = `&#8377; ${totalPrice.toLocaleString("en-IN")} /night`;
+
+    if (isTaxSwitchOn) {
+      priceInfo.innerHTML += ` <i class="tax"> &nbsp;with 18% GST</i>`;
+    }
+  });
+}
+
+// Function to calculate total price with GST
+function calculateTotalPrice(basePrice) {
+  const gstPercentage = 18;
+  const gstAmount = (basePrice * gstPercentage) / 100;
+  const totalPrice = basePrice + gstAmount;
+  return totalPrice.toLocaleString("en-IN");
+}
+
+  // let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+  // taxSwitch.addEventListener("click", () => {
+  //   let taxInfo = document.getElementsByClassName("tax-info");
+  //   for (info of taxInfo) {
+  //     if (info.style.display != "inline") {
+  //       info.style.display = "inline";
+  //     } else {
+  //       info.style.display = "none";
+  //     }
+  //   }
+  // });
+
+  const tabs = document.querySelectorAll(".scrollable-tabs-container .filter-container a");
+  const rightArrow = document.querySelector(
+    ".scrollable-tabs-container .right-arrow svg"
+  );
+  const leftArrow = document.querySelector(
+    ".scrollable-tabs-container .left-arrow svg"
+  );
+  const filterContainer = document.querySelector(
+    ".scrollable-tabs-container .filter-container"
+  );
+  const leftArrowContainer = document.querySelector(
+    ".scrollable-tabs-container .left-arrow"
+  );
+  const rightArrowContainer = document.querySelector(
+    ".scrollable-tabs-container .right-arrow"
+  );
+
+  const removeAllActiveClasses = () => {
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+  };
+
+  
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", (event) => {
+      event.preventDefault();
+      setActiveFilter(tab);
+      window.location.href = tab.getAttribute("href");
+    });
+  });
+
+  const setActiveFilter = (tab) => {
+  removeAllActiveClasses();
+  tab.classList.add("active");
+  localStorage.setItem("activeFilter", tab.getAttribute("href"));
+};
+
+// Check if there's a stored active filter and set it on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const storedFilter = localStorage.getItem("activeFilter");
+  if (storedFilter) {
+    const activeTab = document.querySelector(`.filter[href="${storedFilter}"]`);
+    if (activeTab) {
+      setActiveFilter(activeTab);
+    }
+  }
+});
+
+
+  const manageIcons = () => {
+    if (filterContainer.scrollLeft >= 20) {
+      leftArrowContainer.classList.add("active");
+    } else {
+      leftArrowContainer.classList.remove("active");
+    }
+
+    let maxScrollValue = filterContainer.scrollWidth - filterContainer.clientWidth - 20;
+    // console.log("scroll width: " + filterContainer.scrollWidth);
+    // console.log("client width: " + filterContainer.clientWidth);
+    // console.log("max scroll value: " + maxScrollValue);
+    // console.log("scroll left value: " + filterContainer.scrollLeft);
+
+    if (filterContainer.scrollLeft >= maxScrollValue) {
+      rightArrowContainer.classList.remove("active");
+    } else {
+      rightArrowContainer.classList.add("active");
+    }
+  };
+
+
+  rightArrow.addEventListener("click", () => {
+    console.log("clicked");
+    filterContainer.scrollLeft += 200;
+    setTimeout(() => {
+      manageIcons();
+    }, 500);
+  });
+
+  leftArrow.addEventListener("click", () => {
+    console.log("clicked");
+    filterContainer.scrollLeft -= 200;
+    setTimeout(() => {
+      manageIcons();
+    }, 500);
+  });
+
+  filterContainer.addEventListener("scroll", manageIcons);
+
+  let dragging = false;
+
+  const drag = (e) => {
+    if(!dragging) return;
+    filterContainer.classList.add("dragging");
+    filterContainer.scrollLeft -= e.movementX;
+  }
+
+  filterContainer.addEventListener("mousedown", () => {
+    dragging = true
+  })
+
+  filterContainer.addEventListener("mousemove", drag);
+
+  document.addEventListener("mouseup", () => {
+    dragging = false;
+    filterContainer.classList.remove("dragging");
+  })
+
+</script>

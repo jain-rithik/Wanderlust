@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate") %>
     <div class="row mt-3">
-        <div class="col-8 offset-2">
+        <div class="col-sm-8 offset-sm-2 px-3">
             <br>
             <h3 class="mb-3">Create a new listing</h3>
             <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
@@ -61,7 +61,7 @@
                     <input type="text" class="form-control" name="listing[location]" placeholder="enter location" required>
                     <div class="invalid-feedback">Location should be valid</div>
                 </div>
-                <button class="btn btn-dark add-btn mt-3">Add</button>
+                <button class="btn  edit-btn mt-3">Add</button>
                 <br><br>
             </form>
         </div>
