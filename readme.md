@@ -44,15 +44,15 @@ To run this project locally, follow these steps:
 
 3. Configure environment variables:
 
-Create a .env file in the root directory.
-Add your MongoDB connection string, Cloudinary credentials, Mapbox token, and other necessary variables.
+    Create a .env file in the root directory.
+    Add your MongoDB connection string, Cloudinary credentials, Mapbox token, and other necessary variables.
 
 4. Run the application:
 
     ```bash
     npm start
 
-Visit http://localhost:3000 in your browser to explore Wanderlust locally.
+    Visit http://localhost:3000 in your browser to explore Wanderlust locally.
 
-5. Contribution
+## Contribution
 Feel free to contribute to this project by opening issues or creating pull requests. Your feedback and contributions are highly appreciated!
