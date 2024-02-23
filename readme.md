@@ -39,7 +39,6 @@ To run this project locally, follow these steps:
 2. Install dependencies:
 
     ```bash
-    Copy code
     cd Wanderlust
     npm install
 
@@ -51,7 +50,6 @@ Add your MongoDB connection string, Cloudinary credentials, Mapbox token, and ot
 4. Run the application:
 
     ```bash
-    Copy code
     npm start
 
 Visit http://localhost:3000 in your browser to explore Wanderlust locally.
